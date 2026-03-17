@@ -3,8 +3,7 @@
 import click
 
 from luma_cli.core.config import settings
-from luma_cli.core.output import console, print_models
-from luma_cli.core.output import ASPECT_RATIOS
+from luma_cli.core.output import ASPECT_RATIOS, console, print_models
 
 
 @click.command()

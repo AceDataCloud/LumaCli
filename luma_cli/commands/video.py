@@ -5,7 +5,13 @@ import click
 from luma_cli.core.client import get_client
 from luma_cli.core.exceptions import LumaError
 from luma_cli.core.output import (
-    LUMA_MODELS, DEFAULT_MODEL, print_error, print_json, print_video_result, ASPECT_RATIOS, DEFAULT_ASPECT_RATIO,
+    ASPECT_RATIOS,
+    DEFAULT_ASPECT_RATIO,
+    DEFAULT_MODEL,
+    LUMA_MODELS,
+    print_error,
+    print_json,
+    print_video_result,
 )
 
 
@@ -176,4 +182,3 @@ def extend(
     except LumaError as e:
         print_error(e.message)
         raise SystemExit(1) from e
-

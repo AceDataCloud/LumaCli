@@ -11,9 +11,9 @@ from importlib import metadata
 import click
 from dotenv import load_dotenv
 
-from luma_cli.commands.video import extend, generate, image_to_video
+from luma_cli.commands.info import aspect_ratios, config, models
 from luma_cli.commands.task import task, tasks_batch, wait
-from luma_cli.commands.info import models, config, aspect_ratios
+from luma_cli.commands.video import extend, generate, image_to_video
 
 load_dotenv()
 

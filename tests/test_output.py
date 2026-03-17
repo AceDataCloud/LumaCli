@@ -1,15 +1,15 @@
 """Tests for output formatting."""
 
 from luma_cli.core.output import (
+    ASPECT_RATIOS,
     DEFAULT_MODEL,
     LUMA_MODELS,
     print_error,
-    print_video_result,
     print_json,
     print_models,
     print_success,
     print_task_result,
-    ASPECT_RATIOS,
+    print_video_result,
 )
 
 
@@ -23,7 +23,7 @@ class TestConstants:
         assert DEFAULT_MODEL in LUMA_MODELS
 
     def test_models_include_all(self):
-        for model in ['luma']:
+        for model in ["luma"]:
             assert model in LUMA_MODELS
 
     def test_aspect_ratios(self):
