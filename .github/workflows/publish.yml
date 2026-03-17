@@ -31,7 +31,7 @@ jobs:
           LATEST_BUILD=$(python -c "
           import requests
           try:
-              resp = requests.get('https://pypi.org/pypi/luma-cli/json', timeout=10)
+              resp = requests.get('https://pypi.org/pypi/acedata-luma-cli/json', timeout=10)
               if resp.status_code == 200:
                   versions = resp.json().get('releases', {}).keys()
                   today_prefix = '${DATE_PREFIX}'
@@ -93,7 +93,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/project/luma-cli/${{ needs.build.outputs.version }}
+      url: https://pypi.org/project/acedata-luma-cli/${{ needs.build.outputs.version }}
     steps:
       - name: Download distribution artifacts
         uses: actions/download-artifact@v8

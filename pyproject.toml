@@ -1,5 +1,5 @@
 [project]
-name = "luma-cli"
+name = "acedata-luma-cli"
 version = "0.1.0"
 description = "CLI tool for Luma Dream Machine AI Video Generation via AceDataCloud API"
 readme = "README.md"

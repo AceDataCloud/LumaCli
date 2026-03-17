@@ -1,7 +1,7 @@
 # Luma CLI
 
-[![PyPI version](https://img.shields.io/pypi/v/luma-cli.svg)](https://pypi.org/project/luma-cli/)
-[![PyPI downloads](https://img.shields.io/pypi/dm/luma-cli.svg)](https://pypi.org/project/luma-cli/)
+[![PyPI version](https://img.shields.io/pypi/v/acedata-acedata-luma-cli.svg)](https://pypi.org/project/acedata-acedata-luma-cli/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/acedata-acedata-luma-cli.svg)](https://pypi.org/project/acedata-acedata-luma-cli/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CI](https://github.com/AceDataCloud/LumaCli/actions/workflows/ci.yaml/badge.svg)](https://github.com/AceDataCloud/LumaCli/actions/workflows/ci.yaml)
@@ -33,10 +33,10 @@ Get your API token from [AceDataCloud Platform](https://platform.acedata.cloud/)
 
 ```bash
 # Install with pip
-pip install luma-cli
+pip install acedata-acedata-luma-cli
 
 # Or with uv (recommended)
-uv pip install luma-cli
+uv pip install acedata-acedata-luma-cli
 
 # Or from source
 git clone https://github.com/AceDataCloud/LumaCli.git
@@ -156,9 +156,9 @@ mypy luma_cli
 ## Docker
 
 ```bash
-docker pull ghcr.io/acedatacloud/luma-cli:latest
+docker pull ghcr.io/acedatacloud/acedata-acedata-luma-cli:latest
 docker run --rm -e ACEDATACLOUD_API_TOKEN=your_token \
-  ghcr.io/acedatacloud/luma-cli generate "A test video"
+  ghcr.io/acedatacloud/acedata-acedata-luma-cli generate "A test video"
 ```
 
 ## Project Structure
@@ -195,7 +195,7 @@ LumaCli/
 | Usage | Direct shell, scripts, CI/CD | Claude, VS Code, MCP clients |
 | Output | Rich tables / JSON | Structured MCP responses |
 | Automation | Shell scripts, piping | AI agent workflows |
-| Install | `pip install luma-cli` | `pip install mcp-luma` |
+| Install | `pip install acedata-acedata-luma-cli` | `pip install mcp-luma` |
 
 Both tools use the same AceDataCloud API and share the same API token.
 
