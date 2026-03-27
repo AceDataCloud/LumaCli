@@ -9,26 +9,22 @@ def test_settings_default_values():
     settings = Settings()
     assert settings.api_base_url == "https://api.acedata.cloud"
     assert settings.request_timeout == 1800
-    assert settings.default_model == "luma"
 
 
 def test_settings_from_environment():
     os.environ["ACEDATACLOUD_API_TOKEN"] = "test-token-123"
     os.environ["ACEDATACLOUD_API_BASE_URL"] = "https://custom.api.example.com"
     os.environ["LUMA_REQUEST_TIMEOUT"] = "300"
-    os.environ["LUMA_DEFAULT_MODEL"] = "luma"
 
     try:
         settings = Settings()
         assert settings.api_token == "test-token-123"
         assert settings.api_base_url == "https://custom.api.example.com"
         assert settings.request_timeout == 300
-        assert settings.default_model == "luma"
     finally:
         del os.environ["ACEDATACLOUD_API_TOKEN"]
         del os.environ["ACEDATACLOUD_API_BASE_URL"]
         del os.environ["LUMA_REQUEST_TIMEOUT"]
-        del os.environ["LUMA_DEFAULT_MODEL"]
 
 
 def test_settings_is_configured():

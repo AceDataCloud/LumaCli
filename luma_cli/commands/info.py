@@ -3,13 +3,7 @@
 import click
 
 from luma_cli.core.config import settings
-from luma_cli.core.output import ASPECT_RATIOS, console, print_models
-
-
-@click.command()
-def models() -> None:
-    """List available Luma models."""
-    print_models()
+from luma_cli.core.output import ASPECT_RATIOS, console
 
 
 @click.command("aspect-ratios")
@@ -47,7 +41,6 @@ def config() -> None:
     table.add_row(
         "API Token", f"{settings.api_token[:8]}..." if settings.api_token else "[red]Not set[/red]"
     )
-    table.add_row("Default Model", settings.default_model)
     table.add_row("Request Timeout", f"{settings.request_timeout}s")
 
     console.print(table)

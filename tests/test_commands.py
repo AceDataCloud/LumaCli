@@ -37,7 +37,7 @@ class TestGlobalCommands:
         result = runner.invoke(cli, ["generate", "--help"])
         assert result.exit_code == 0
         assert "PROMPT" in result.output
-        assert "--model" in result.output
+        assert "--loop" in result.output
 
 
 # ─── Generate Commands ─────────────────────────────────────────────────────
@@ -69,13 +69,13 @@ class TestGenerateCommands:
         assert "test-task-123" in result.output
 
     @respx.mock
-    def test_generate_with_model(self, runner, mock_video_response):
+    def test_generate_with_loop(self, runner, mock_video_response):
         respx.post("https://api.acedata.cloud/luma/videos").mock(
             return_value=Response(200, json=mock_video_response)
         )
         result = runner.invoke(
             cli,
-            ["--token", "test-token", "generate", "test", "-m", "luma", "--json"],
+            ["--token", "test-token", "generate", "test", "--loop", "--json"],
         )
         assert result.exit_code == 0
 
@@ -114,7 +114,7 @@ class TestGenerateCommands:
                 "test-token",
                 "image-to-video",
                 "Animate this",
-                "-i",
+                "--start-image-url",
                 "https://example.com/photo.jpg",
                 "--json",
             ],
@@ -173,11 +173,6 @@ class TestTaskCommands:
 
 class TestInfoCommands:
     """Tests for info and utility commands."""
-
-    def test_models(self, runner):
-        result = runner.invoke(cli, ["models"])
-        assert result.exit_code == 0
-        assert "luma" in result.output
 
     def test_aspect_ratios(self, runner):
         result = runner.invoke(cli, ["aspect-ratios"])
