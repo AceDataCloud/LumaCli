@@ -21,7 +21,6 @@ class Settings:
     request_timeout: float = field(
         default_factory=lambda: float(os.environ.get("LUMA_REQUEST_TIMEOUT", "1800"))
     )
-    default_model: str = field(default_factory=lambda: os.environ.get("LUMA_DEFAULT_MODEL", "luma"))
 
     @property
     def is_configured(self) -> bool:

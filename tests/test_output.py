@@ -2,11 +2,8 @@
 
 from luma_cli.core.output import (
     ASPECT_RATIOS,
-    DEFAULT_MODEL,
-    LUMA_MODELS,
     print_error,
     print_json,
-    print_models,
     print_success,
     print_task_result,
     print_video_result,
@@ -15,16 +12,6 @@ from luma_cli.core.output import (
 
 class TestConstants:
     """Tests for output constants."""
-
-    def test_models_count(self):
-        assert len(LUMA_MODELS) == 1
-
-    def test_default_model_in_models(self):
-        assert DEFAULT_MODEL in LUMA_MODELS
-
-    def test_models_include_all(self):
-        for model in ["luma"]:
-            assert model in LUMA_MODELS
 
     def test_aspect_ratios(self):
         assert len(ASPECT_RATIOS) == 7
@@ -107,11 +94,3 @@ class TestPrintTaskResult:
         captured = capsys.readouterr()
         assert "task-123" in captured.out
 
-
-class TestPrintModels:
-    """Tests for models display."""
-
-    def test_print_models(self, capsys):
-        print_models()
-        captured = capsys.readouterr()
-        assert "luma" in captured.out
