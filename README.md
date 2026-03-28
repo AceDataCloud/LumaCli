@@ -188,9 +188,9 @@ LumaCli/
 └── README.md
 ```
 
-## Luma CLI vs MCP Luma
+## Luma CLI vs Luma MCP
 
-| Feature | Luma CLI | MCP Luma |
+| Feature | Luma CLI | Luma MCP |
 |---------|-----------|-----------|
 | Interface | Terminal commands | MCP protocol |
 | Usage | Direct shell, scripts, CI/CD | Claude, VS Code, MCP clients |
