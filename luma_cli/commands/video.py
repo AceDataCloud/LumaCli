@@ -29,6 +29,9 @@ from luma_cli.core.output import (
     help="Enable prompt text enhancement (default: enabled).",
 )
 @click.option("--callback-url", default=None, help="Webhook callback URL.")
+@click.option(
+    "--timeout", default=None, type=int, help="Timeout in seconds for the API to return data."
+)
 @click.option("--json", "output_json", is_flag=True, help="Output raw JSON.")
 @click.pass_context
 def generate(
@@ -38,6 +41,7 @@ def generate(
     loop: bool,
     enhancement: bool,
     callback_url: str | None,
+    timeout: int | None,
     output_json: bool,
 ) -> None:
     """Generate a video from a text prompt.
@@ -59,6 +63,7 @@ def generate(
             "loop": loop,
             "enhancement": enhancement,
             "callback_url": callback_url,
+            "timeout": timeout,
         }
 
         result = client.generate_video(**payload)  # type: ignore[arg-type]
@@ -97,6 +102,9 @@ def generate(
     help="Enable prompt text enhancement (default: enabled).",
 )
 @click.option("--callback-url", default=None, help="Webhook callback URL.")
+@click.option(
+    "--timeout", default=None, type=int, help="Timeout in seconds for the API to return data."
+)
 @click.option("--json", "output_json", is_flag=True, help="Output raw JSON.")
 @click.pass_context
 def image_to_video(
@@ -108,6 +116,7 @@ def image_to_video(
     loop: bool,
     enhancement: bool,
     callback_url: str | None,
+    timeout: int | None,
     output_json: bool,
 ) -> None:
     """Generate a video from reference image(s).
@@ -131,6 +140,7 @@ def image_to_video(
             loop=loop,
             enhancement=enhancement,
             callback_url=callback_url,
+            timeout=timeout,
         )
         if output_json:
             print_json(result)
@@ -153,6 +163,9 @@ def image_to_video(
     help="Aspect ratio.",
 )
 @click.option("--callback-url", default=None, help="Webhook callback URL.")
+@click.option(
+    "--timeout", default=None, type=int, help="Timeout in seconds for the API to return data."
+)
 @click.option("--json", "output_json", is_flag=True, help="Output raw JSON.")
 @click.pass_context
 def extend(
@@ -162,6 +175,7 @@ def extend(
     prompt: str | None,
     aspect_ratio: str,
     callback_url: str | None,
+    timeout: int | None,
     output_json: bool,
 ) -> None:
     """Extend an existing video.
@@ -187,6 +201,7 @@ def extend(
             prompt=prompt,
             aspect_ratio=aspect_ratio,
             callback_url=callback_url,
+            timeout=timeout,
         )
         if output_json:
             print_json(result)
