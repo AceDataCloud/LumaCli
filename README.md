@@ -105,6 +105,7 @@ Most commands support:
 ```
 --json          Output raw JSON (for piping/scripting)
 --model TEXT    Luma model version (default: luma)
+--timeout INT   Timeout in seconds for the API to return data
 ```
 
 ## Available Models
